@@ -66,6 +66,6 @@ app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 
 var port = process.env.PORT || 5000;
-app.listen(port, function () {
+app.listen(port, process.env.IP, function () {
   console.log("Yelp Server 5000");
 });
