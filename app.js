@@ -20,17 +20,24 @@ var commentRoutes = require("./routes/comments"),
 // });
 mongoose.connect(process.env.DATABASEURL, {
   useNewUrlParser: true,
+  useCreateIndex: true,
   useUnifiedTopology: true,
 });
-// mongoose.connect("mongodb+srv://dbWang:test12345@cluster0.l51tg.mongodb.net/<dbname>?retryWrites=true&w=majority", {
-//     useNewUrlParser: true,
-//     useCreateIndex: true,
-//     useUnifiedTopology: true
-// }).then(()=>{
+// mongoose
+//   .connect(
+//     "mongodb+srv://dbWang:test12345@cluster0.l51tg.mongodb.net/yelpCamp?retryWrites=true&w=majority",
+//     {
+//       useNewUrlParser: true,
+//       useCreateIndex: true,
+//       useUnifiedTopology: true,
+//     }
+//   )
+//   .then(() => {
 //     console.log("Connected to DB!");
-// }).catch(err => {
+//   })
+//   .catch((err) => {
 //     console.log("ERROR:", err.message);
-// });
+//   });
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
