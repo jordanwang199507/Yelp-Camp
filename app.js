@@ -46,6 +46,7 @@ app.use(methodOverride("_method"));
 app.use(flash());
 
 // seedDB();  //adding intial data to be viewed
+app.locals.moment = require("moment");
 
 // Passport Cofiguration
 app.use(
