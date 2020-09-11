@@ -1,28 +1,49 @@
 <% include ../layouts/header %> 
-
 <% if(currentUser && currentUser.isAdmin){ %>
-    <h1>You're an admin!</h1>
+    <h1>Hello <%=currentUser%></h1>
 <% } %>
-<div class="container">
+<div class="container" style="min-height:400px; margin-bottom:100px; clear:both;">
   <header class="jumbotron">
     <div class="container">
       <h1>Welcome To YelpCamp</h1>
       <p>View our hand-picked campgrounds from all over the world</p>
       <p>
-        <a class="btn btn-primary btn-lg" href="/campgrounds/new"
-          >Add New Campground</a
-        >
+        <a class="btn btn-primary btn-md" href="/campgrounds/new"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add New Campground</a>
       </p>
+      <!-- <p>
+        <form action="/campgrounds" method="GET" class="form-inline">
+          <div class="form-group">
+            <input type="text" name="search" placeholder="Campground search..." class="form-control">
+            <input type="submit" value="Search" class="btn btn-info">
+          </div>
+        </form>
+      </p> -->
     </div>
   </header>
 
   <div class="row text-center" style="display: flex; flex-wrap: wrap">
+    <div class="col-md-12">
+      <% if(noMatch !== null) { %>
+        <h3><%= noMatch %></h3>
+        <p>
+         <form action="/campgrounds" method="GET" class="form-inline">
+           <div class="form-group">
+             <input type="text" name="search" placeholder="Campground search..." class="form-control">
+             <input type="submit" value="Search" class="btn btn-default">
+           </div>
+         </form>
+       </p>
+      <% } %>
+    </div>
     <% for (var i = 0; i < campgrounds.length; i++){ %>
     <div class="col-md-3 col-sm-6">
       <div class="thumbnail">
         <img src="<%=campgrounds[i].image%>" />
         <div class="caption">
           <h4><%= campgrounds[i].name %></h4>
+          <div>
+            <span class="badge label-primary"><i class="fas fa-thumbs-up"></i> <%= campgrounds[i].likes.length %></span>
+          </div>
         </div>
         <p>
           <a

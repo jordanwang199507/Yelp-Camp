@@ -22,8 +22,18 @@
     </div>
     
     <div id="landing-header">
- 		<h1>Welcome to YelpCamp!</h1>
-		<a href="/campgrounds" class="btn btn-lg btn-success">View All Campgrounds</a>
+ 		<h1><span class="glyphicon glyphicon-tent" aria-hidden="true"></span> Welcome to YelpCamp!</h1>
+        <a href="/campgrounds" class="btn btn-lg btn-success"><span class="glyphicon glyphicon-tree-deciduous" aria-hidden="true"></span> 
+            View All Campgrounds <span class="glyphicon glyphicon-tree-deciduous" aria-hidden="true"></span>
+        </a>
+        <p>
+            <form action="/campgrounds" method="GET" class="form-inline">
+                <div class="form-group">
+                  <input type="text" name="search" placeholder="Campground search..." class="form-control">
+                  <input type="submit" value="Search" class="btn btn-info">
+                </div>
+            </form>         
+        </p>
     </div>
     
     <ul class="slideshow">
@@ -34,4 +44,3 @@
       <li></li>
     </ul>
 
-<% include layouts/footer %>

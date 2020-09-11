@@ -207,6 +207,7 @@ Comment Destroy Route: /campgrounds/:id/comments/comments_id
 - heroku create
 - git remote add heroku https://git.heroku.com/warm-shore-55365.git
 - git remote rm heroku
+- git push heroku master
 
 RESTFUL ROUTES
 name url verb description
