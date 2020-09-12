@@ -1,7 +1,7 @@
 # YelpCamp
 
 ## Live Demo
-to view the live demo of this app, please visit https://warm-shore-55365.herokuapp.com/campgrounds
+to view the live demo of this app, please visit https://warm-shore-55365.herokuapp.com/
 
 ## Features
 - Authentication
