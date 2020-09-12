@@ -26,4 +26,4 @@ to view the live demo of this app, please visit https://warm-shore-55365.herokua
 - Heroku
 - Cloudinary
 
-# Udemy course taught by Colt Steele
+#### Udemy course taught by Colt Steele
