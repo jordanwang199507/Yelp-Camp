@@ -1,19 +1,24 @@
 <% include ../layouts/header %>
 
 <div class="container">
-    <div class="row" style="position:relative; top:80px">
+    <div class="row" style="position:relative; top:80px ; min-height:400px; margin-bottom:100px; clear:both;">
         <h1 style="text-align: center">Create a New Campground</h1>
-        <div style="width: 30%; margin: 25px auto;"> 
-            <form action="/campgrounds" method="POST">          
+        <div style="width: 30%; margin: 25px auto;">
+            <form action="/campgrounds" method="POST" enctype="multipart/form-data">      
                 <div class="form-group">
                     <input class="form-control" type="text" name="name" placeholder="name">
                 </div>
                 <div class="form-group">
                     <input class="form-control" type="number" name="price" placeholder="price" min="0.01" step="0.01">
-                </div>                
+                </div>    
                 <div class="form-group">
+                    <label for="image">Image</label>
+                    <input style="height:20px" type="file" id="image" name="image" accept="image/*" required>
+                </div>                            
+                <!-- <div class="form-group">
+                    <label for="image">Or: </label>
                     <input class="form-control" type="text" name="image" placeholder="image url">
-                </div>  
+                </div>                 -->
                 <div class="form-group">
                     <input class="form-control" type="text" name="description" placeholder="description">
                 </div>  

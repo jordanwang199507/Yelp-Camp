@@ -1,6 +1,6 @@
 <% include ../layouts/header %> 
 <% if(currentUser && currentUser.isAdmin){ %>
-    <h1>Hello <%=currentUser%></h1>
+    <h1>Hello <%=currentUser.username%></h1>
 <% } %>
 <div class="container" style="min-height:400px; margin-bottom:100px; clear:both;">
   <header class="jumbotron">
@@ -35,26 +35,26 @@
        </p>
       <% } %>
     </div>
-    <% for (var i = 0; i < campgrounds.length; i++){ %>
+    <% campgrounds.forEach(campground => {%>
     <div class="col-md-3 col-sm-6">
       <div class="thumbnail">
-        <img src="<%=campgrounds[i].image%>" />
+        <img class="campground__image" src="<%= campground.image %>" alt="<%= campground.image%>" />       
         <div class="caption">
-          <h4><%= campgrounds[i].name %></h4>
+          <h4 class="caption"><%= campground.name %></h4>
           <div>
-            <span class="badge label-primary"><i class="fas fa-thumbs-up"></i> <%= campgrounds[i].likes.length %></span>
+            <span class="badge label-primary"><i class="fas fa-thumbs-up"></i> <%= campground.likes.length %></span>
           </div>
         </div>
         <p>
           <a
-            href="/campgrounds/<%= campgrounds[i]._id %>"
+            href="/campgrounds/<%= campground._id %>"
             class="btn btn-primary"
             >More Info</a
           >
         </p>
       </div>
     </div>
-    <% }; %>
+    <% }); %>
   </div>
 </div>
 <% include ../layouts/footer %>
